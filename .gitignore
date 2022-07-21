@@ -1,0 +1,16 @@
+*.bak
+*.iss
+*.pyc
+*.tar
+install_manifest.txt
+.build
+build
+install
+libs
+tools
+backEnd/triggers/Makefile
+launch/Makefile
+vitaToolbox/path/Makefile
+xnat/Makefile
+
+
