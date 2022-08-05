@@ -1,0 +1,36 @@
+#!/bin/bash
+# ----------------------------------------------------------------------
+#  Copyright (C) 2008-2009 Vitamin D, Inc. All rights reserved.
+#
+#  The information and source code contained herein is the
+#  exclusive property of Vitamin D, Inc. No part of this software
+#  may be used, reproduced, stored or distributed in any form,
+#  without explicit written authorization from Vitamin D, Inc.
+# ----------------------------------------------------------------------
+#
+# Handy shell script for running the passed command in our environment.
+
+if [ "$#" == "0" -o "$1" == "--help" ]; then
+  echo "Usage: $0 commandToRun [args]"
+  exit 1
+fi
+
+# Run the "setupEnvironment" script to get our PATH updated, and make sure to
+# tell it that we wish to run from source by setting the DEVEL_ENV environment
+# variable to 1.
+DEVEL_ENV=1
+source setupEnvironment
+
+
+# Run!
+set +e
+pycheckLoc=`which doPycheck 2> /dev/null`
+if [ "`basename $1 .py`.py" != "`basename $1`" ]; then
+  # The thing we're running doesn't end with ".py", so just run it directly.
+  "$@"
+elif [ -z "$pycheckLoc" ]; then
+  echo Pychecker script not found--running directly...
+  "$@"
+else
+  doPycheck --run "$@"
+fi

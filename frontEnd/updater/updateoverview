@@ -1,0 +1,37 @@
+To post a new version:
+
+1) open vitamind_video_mac.xml
+2) Update 
+	a) Versions to the svn change number
+	b) shortVersionString to the user readable name
+	c) length to the size of the DMG (this is optional but helps the progress dialog out)
+	d) description to be the release notes for this version.
+
+3) repeat for vitamind_video_windows.xml
+  c) size of .exe
+  
+
+4) Upload the the new .xml files,  Vitamin D Video.dmg, and Vitamin D Video Setup.exe to the server. Currently that is www.vitamindinc.com/update/vitamindvideo/ . Greg can give you the FTP username and password if needed.
+
+
+
+Debugging Tricks
+
+You can override the path that the app uses by creating a file called updater.txt in the Applications Support/Vitamin D Video/ directory whose first line is the base (upto the vitamind_video_mac.xml) part of the url where you want to look for updates
+
+
+How the installer works
+1) Checks the server for the app cast (either vitamind_video_windows.xml or vitamind_video_mac.xml)
+2) compares the version number of the app to the one on the server
+3) If a new version is available, prompt the user if they want to download the new one
+4) After the download succeeds
+	Mac
+	 copies the installer from the currently running app to /Libraries/Application Support/Vitamin D Video/
+	 Runs that installer
+	 
+	Windows - Launches the Innosoft installer with the /silent flag
+	
+Making a new mac installer
+	1) Build the project file frontend/updater/Macupdater/Updater.xcodeproj
+	2) tar -cf installScriptApp.tar Updater.app on the results of the build
+	3) copy that tar file to frontend/updater

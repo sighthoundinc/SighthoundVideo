@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Cameras</key>
+	<string>1</string>
+	<key>Edition</key>
+	<string>Starter Edition</string>
+	<key>Email</key>
+	<string>###</string>
+	<key>Expires</key>
+	<string>0/0/0000</string>
+	<key>Name</key>
+	<string>###</string>
+	<key>Serial Number</key>
+	<string>###</string>
+	<key>Signature</key>
+	<data>
+	F/oG8gioAX2/O0bunprijL7Rnga69rGD5XD/BS0azq741PYsl4QFxnaS0XFEB1n1ODQn
+	8b+lENlZdPTIhUF21TVav/O+JyUTwbHdbGDFHf4BpRaewmLWN8017Q3QaDgCGF6d37S3
+	cA6C0NI2YgbRdZ4LFMmTrLu5OWol2ZvzZIQ=
+	</data>
+</dict>
+</plist>

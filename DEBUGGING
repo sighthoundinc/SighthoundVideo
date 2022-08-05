@@ -1,0 +1,84 @@
+==============================================================================
+Troubleshooting Sighthound Video 
+==============================================================================
+
+
+-----------------------------------------------------------------------------
+1. Enabling debug logs
+-----------------------------------------------------------------------------
+
+Notice: This is supposed to be an internal troubleshooting tool. It is expected
+that support personnel will generate a config file with the debug settings enabled,
+and provide the file to the customers with the instructions.
+
+The debug configuration resides in the file debugPrefs in the Sighthound Video
+data directory (so ~/Library/Application Support/Sighthound Video or
+C:\Users\[User]\AppData\Local\Sighthound Video).
+
+The file is read at application start, so to be sure the settings are applied,
+it is advised to place the file in the above folders and reboot.
+
+File's structure is "name=value" pairs, with each setting residing on a separate line.
+Example file's contents:
+
+cameraLogLevel-Ubi=-10
+cameraLogFfmpeg-Ubi=1
+cameraStreamStats=20
+backEndQueueStats=20
+backEndQueueMaxSize=20
+backEndQueueMaxExecTime=0.3
+
+
+The following settings are currently supported (default in square brackets):
+
+
+- cameraLogLevel [0]        - log level of camera process. For now, setting it 
+                              to negative value is the only effective setting,
+                              and it will unleash all available logging for all 
+                              cameras. This setting can also be made module-specific
+                              by appending the module name, e.g. "cameraLogLevel-MyModuleName".
+                              If both are present, module-specific setting takes
+                              precedence.
+                              Module name may be: camera name, "NMS", "DiskCleaner",
+                              "BackEnd", "UI", "Response", "WebServer"
+- cameraLogFfmpeg [0]       - Setting this to non-zero value, will add ffmpeg's 
+                              logging to logs already produced by the camera process.
+- cameraLogModules [""]     - Comma-separated list of Modules to apply
+                              trace log level to (by default, all).
+                              The following module names can be used:
+                                  "FFMPEG Demux"
+                                  "Decoder"
+                                  "Encoder"
+                                  "Recorder"
+                                  "Local Camera"
+                                  "Live555 Demux"
+                                  "Input Iterator"
+                                  "Resize"
+                                  "Splitter"
+                                  "Limiter"
+                                  "MMAP"
+                                  "FFMPEG Filters"
+                                  "Thread Connector"
+                                  "Metadata Injector"
+                                  "Audio renderer"
+                                  "Mask Filter"
+                                  "MediaFoundation Decoder" [Windows only]
+                                  "Recorder Sync"
+                                  "Sync Buffer"
+                                  "Clip Reader"
+                              This setting can also be made module-specific
+                              by appending the module name, e.g. "cameraLogModules-MyModuleName".
+                              If both are present, module-specific setting takes
+                              precedence.
+- cameraStreamStats [3600]  - interval at which camera statistics are to be logged
+- backEndQueueMaxExecTime [0.5]
+                            - execution time of a single event considered abnormal
+                              no action is currently taken when it is encountered,
+                              and we just count those instances instead
+- backEndQueueMaxSize [50]  - size of backEnd queue considered abnormal
+                              no action is currently taken when it is encountered,
+                              and we just count those instances instead
+- backEndQueueStats [3600]  - interval at which backEnd process statistics are
+                              to be logged
+- mmapDebug [3600]          - interval at which memory map access statistics will
+                              be logged (grid view/monitor view)
