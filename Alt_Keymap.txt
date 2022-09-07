@@ -1,0 +1,63 @@
+# Put this as "Keymap.txt" in the SmartVideo folder to use it.
+
+{
+    (wx.WXK_LEFT,  0):                         ('inflate', (-1, 0)),
+    (wx.WXK_LEFT,  wx.MOD_CONTROL):            ('move',    (-1, 0)),
+    (wx.WXK_LEFT,  wx.MOD_CMD):                ('move',    (-1, 0)),
+    (ord('a'),     0):                         ('deflate', ( 1, 0)),
+    (ord('A'),     0):                         ('deflate', ( 1, 0)),
+
+    (ord(','),     0):                         ('stepBack',tuple()),
+    (ord('<'),     wx.MOD_SHIFT):              ('stepBack',tuple()),
+    
+    (wx.WXK_RIGHT, 0):                         ('inflate', ( 1, 0)),
+    (wx.WXK_RIGHT, wx.MOD_CONTROL):            ('move',    ( 1, 0)),
+    (wx.WXK_RIGHT, wx.MOD_CMD):                ('move',    ( 1, 0)),
+    (ord('d'),     0):                         ('deflate', (-1, 0)),
+    (ord('D'),     0):                         ('deflate', (-1, 0)),
+
+    (ord('.'),     0):                         ('stepFwd', tuple()),
+    (ord('>'),     wx.MOD_SHIFT):              ('stepFwd', tuple()),
+    
+    (wx.WXK_UP,    0):                         ('inflate', (0, -1)),
+    (wx.WXK_UP,    wx.MOD_CONTROL):            ('move',    (0, -1)),
+    (wx.WXK_UP,    wx.MOD_CMD):                ('move',    (0, -1)),
+    (ord('w'),     0):                         ('deflate', (0,  1)),
+    (ord('W'),     0):                         ('deflate', (0,  1)),
+    
+    (wx.WXK_DOWN,  0):                         ('inflate', (0,  1)),
+    (wx.WXK_DOWN,  wx.MOD_CONTROL):            ('move',    (0,  1)),
+    (wx.WXK_DOWN,  wx.MOD_CMD):                ('move',    (0,  1)),
+    (ord('s'),     0):                         ('deflate', (0, -1)),
+    (ord('S'),     0):                         ('deflate', (0, -1)),
+
+    (ord('1'), 0): ('setResizeRate', (1,)),
+    (ord('2'), 0): ('setResizeRate', (2,)),
+    (ord('3'), 0): ('setResizeRate', (3,)),
+    (ord('4'), 0): ('setResizeRate', (4,)),
+    (ord('5'), 0): ('setResizeRate', (5,)),
+    (ord('6'), 0): ('setResizeRate', (6,)),
+    (ord('7'), 0): ('setResizeRate', (7,)),
+    (ord('8'), 0): ('setResizeRate', (8,)),
+    (ord('9'), 0): ('setResizeRate', (9,)),
+    
+    (ord('1'), wx.MOD_CONTROL): ('setMoveRate', (1,)),
+    (ord('2'), wx.MOD_CONTROL): ('setMoveRate', (2,)),
+    (ord('3'), wx.MOD_CONTROL): ('setMoveRate', (3,)),
+    (ord('4'), wx.MOD_CONTROL): ('setMoveRate', (4,)),
+    (ord('5'), wx.MOD_CONTROL): ('setMoveRate', (5,)),
+    (ord('6'), wx.MOD_CONTROL): ('setMoveRate', (6,)),
+    (ord('7'), wx.MOD_CONTROL): ('setMoveRate', (7,)),
+    (ord('8'), wx.MOD_CONTROL): ('setMoveRate', (8,)),
+    (ord('9'), wx.MOD_CONTROL): ('setMoveRate', (9,)),
+    
+    (ord('1'), wx.MOD_CMD): ('setMoveRate', (1,)),
+    (ord('2'), wx.MOD_CMD): ('setMoveRate', (2,)),
+    (ord('3'), wx.MOD_CMD): ('setMoveRate', (3,)),
+    (ord('4'), wx.MOD_CMD): ('setMoveRate', (4,)),
+    (ord('5'), wx.MOD_CMD): ('setMoveRate', (5,)),
+    (ord('6'), wx.MOD_CMD): ('setMoveRate', (6,)),
+    (ord('7'), wx.MOD_CMD): ('setMoveRate', (7,)),
+    (ord('8'), wx.MOD_CMD): ('setMoveRate', (8,)),
+    (ord('9'), wx.MOD_CMD): ('setMoveRate', (9,)),
+}

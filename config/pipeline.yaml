@@ -1,0 +1,229 @@
+stages:
+    - module: "FrameInputAdaptor"
+      inputs:
+          HACK: "HACK0" # HACK
+      outputs:
+          frame: "frame"
+          ms: "ms"
+          dt: "dt"
+      options:
+          maxFramesBufferedInternally: 0
+
+    - module: "DecodeImage"
+      inputs:
+          pipelineFrame: "frame"
+      outputs:
+          RGB: "RGB"
+          YCbCr: "YCbCr"
+      options:
+          # When converting pixel formats (and downscaling for the tracker), there's a trade-off between quality and speed.
+          # This argument should be set as follows:
+          #     0: Best
+          #     1: Good
+          #     2: Fastest
+          resizeSpeed: 2
+
+    - module: "DetectMotion"
+      inputs:
+          YCbCr: "YCbCr"
+      outputs:
+          movingPixels: "movingPixels"
+      options:
+          # A pixel will be considered "still" if it changed by less
+          # than this percentage between two frames.
+          stillCountThreshold: 12.8
+
+          # An instantaneously still pixel will be considered moving if it's been still
+          # for fewer than this many frames in a row.
+          movingPixelThreshold: 5
+
+    - module: "BackgroundSubtract"
+      inputs:
+          YCbCr: "YCbCr"
+          gmmFeedbackArray: "gmmFeedbackArray" # Retrieved from frame N - 1
+      outputs:
+          gmmFeedbackArray: "shadowMask"
+          foregroundMask: "foregroundMask"
+      options:
+          # How rapidly pixels get learned into the background. Higher values cause not-fed-back stationary objects to
+          # become part of the background model more rapidly, but also reduce the harm caused by sudden lighting changes.
+          alphaT: 0.0075
+
+          # Threshold measuring how close to the mean of a background gaussian a sample must be to be considered a
+          # background pixel. Lower values will cause things to be more prone to being deemed "background".
+          backgroundModelThresh: 16.0
+
+          # Mahalan distance threshold for deciding when a sample "fits" a gaussian.
+          componentThresh: 9.0
+
+          # The initial sigma used by newly-added gaussians.
+          initialSigma: 11.0
+
+          # Threshold on cumulative weight that determines which gaussians are part of the background model.
+          backgroundSignificance: 0.9
+
+          # Related to the number of samples needed to accept a component actually exists.
+          # (In ways the original author tactfully omitted to tell the maintenance programmer *shakes fist*)
+          complexityReduction: 0.05
+
+          # Shadow detection parameters.
+
+          # Minimum fractional change in intensity for shadow classification.
+          shadowIntensityMin: 0.75
+
+          # Maximum fractional change in intensity for shadow classification.
+          shadowIntensityMax: 0.95
+
+          # Square of the maximum *absolute* change in colour for shadow classification.
+          shadowChromaMaxSq: 416.16
+
+    - module: "RegionFinder"
+      inputs:
+          foregroundMask: "foregroundMask"
+      outputs:
+          regions: "regions"
+      options:
+          # Threshold on the Green contour area below which we ignore a region.
+          minRegionSize: 5
+
+    - module: "ObjectTracker"
+      inputs:
+          ms: "ms"
+          dt: "dt"
+          RGB: "RGB"
+          regions: "regions"
+          movingPixels: "movingPixels"
+          gmmFeedbackArray: "shadowMask"
+      outputs:
+          gmmFeedbackArray: "gmmFeedbackArray" # Sent to frame N + 1
+          objsFound: "trackerObjsFound"
+      options:
+          # Threshold on the Green contour area above which a region may become an object
+          # in its own right.
+          minNewObjectPixelCount: 120
+
+          # A new object is ignored unless its dimensions exceed these threshilds (in
+          # either direction)
+          minDim1: 20
+          minDim2: 7
+
+          # How far apart regions within an object must be before being considered for splitting into multiple
+          # objects.
+          splitDistance: 300
+
+          # The maximum distance two objects may ever have been apart to be suscptible to
+          # "whoops" merging. This prevents high-speed objects from being incorrectly whoops-merged with
+          # things they really have nothing to do with.
+          mergeDistance: 500
+
+          # TODO: Figure out this state properly
+          # Something like "The number of frames an object remains uncertain".
+          framesToInitialise: 5
+
+          # How long (in ms) until an object that has no regions is discarded.
+          # Prior to that, the tracker attempts to match regions with the predicted location.
+          lostObjectTimeout: 300
+
+          # How long to track a static object for.
+          # In practice, most static objects will be killed for various reasons much sooner than
+          # this, but if the feedback system wants to keep it going, this is the final cut off point.
+          trackStaticObjectsTime: 18000
+
+          # Special timeouts per-object-class that provide an additional period of static object tracking
+          # for object that have been classified successfully.
+          staticObjectTimeouts:
+            person: 18000
+
+          # How long, in milliseconds, to delay output.
+          # Longer delays give a larger window for the tracker to change its mind and fix things, but
+          # also produce more latency.
+          # For example, sometimes an object is incorrectly tracked as two objects for a short while at
+          # first, but then merged later. If this all happens within the delay window, the tracker will
+          # rewrite history and always output one combined bounding box for the object.
+          delayTime: 3000
+
+          # No feedback from the tracker to the BG subtractor will occur until at least this many frames and
+          # this many miliseconds of video have passed. This allows the BG subtractor time to settle down, as
+          # feedback very early may prevent it from properly learning the background.
+          feedbackSuppressFrames: 30
+          feedbackSuppressTime: 2000
+
+          # To remove noise in the feedback step of the object tracker, we perform a
+          # morphological operation called "open". This parameter controls the
+          # strength of that operation. Larger numbers denoise more.
+          feedbackOpenStrength: 2
+
+    - module: "C3Detector"
+      inputs:
+          ms: "ms"
+          RGB: "RGB"
+          objsFound: "trackerObjsFound"
+      outputs:
+          objsFound: "c3ObjsFound"
+      options:
+          # How frequently the detector is invoked.
+          c3EvalFreqMs: 300
+
+          # Strength of belief required for a decision.
+          targetThreshold: 0.5
+
+          # Maximum delay before classifying an object.
+          maxDetectionTime: 4800
+
+          # List of classifier object types to scan for. The classifier must have had these compiled in, or nothing
+          # will work.
+          objectTypes:
+            - person
+
+          # Limits on aspect ratios for objects. Used as a handy shortcut to skip classification of stupidly-shaped
+          # things. Entries here should be in the same order that they were passed to the classifier at compile time.
+          # Each entry corresponds to a single object class.
+          minAspectRatios:
+            person: 0.6
+
+          maxAspectRatios:
+            person: 3.0
+
+          # Objects that occupy more than this fraction of the frame area are, prior to passing to
+          # the classifier, downscaled until they occupy approximately this fraction of the frame
+          # area. Since this reduces the amount of pixels subjected to classification, it can
+          # significantly reduce computational cost. It can also harm classifier accuracy, as the
+          # classifier does not handle tiny objects well. That said, if the tracker has tracked an
+          # object well, and it is enormous, you're not going to significantly harm accuracy by
+          # downscaling it to be non-enormous.
+          downscaleThreshold: 0.4
+
+          # Scale factor (w.r.t frame height) for maximum oscillation variance
+          oscillationScaleFactor: 24
+
+          # On the bright side, these ones _do_ have names:
+          staleTimeoutMs: 500
+          nmsThreshold: 0.5
+          areaThreshold: 0.1
+          delaySWRatio: 10
+          goodWindowThresholdRatio: 0.2
+
+          # C3 parameters.
+          scoreThresholds:
+            person: 0.15
+
+          interval: 2
+
+          # Pyramid padding to use (x, then y).
+          padx: 8
+          pady: 12
+
+          # The new name for my band.
+          maxFrameDetScoreThresh: 0.7
+
+          # Enable multi-threaded c3
+          threading: false
+
+    - module: "SentryOutput"
+      inputs:
+          ms: "ms"
+          objsFound: "c3ObjsFound"
+      outputs:
+          none: "HACK" # HACK
+      options:
+          none: 0 # HACK
