@@ -1,0 +1,44 @@
+
+#include <windows.h>
+#include <commctrl.h>
+#include <richedit.h>
+#include "resource.h"
+
+mainIcon    ICON    "..\\..\\..\\icons\\SmartVideoApp.ico"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+1 VERSIONINFO
+    FILEVERSION     1,0,0,0
+    PRODUCTVERSION  1,0,0,0
+    FILEOS          VOS_UNKNOWN
+    FILETYPE        VFT_UNKNOWN
+    FILESUBTYPE     VFT2_UNKNOWN
+    FILEFLAGSMASK   0x00000000
+    FILEFLAGS       0x00000000
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "04090025"
+        {
+            VALUE "Comments", ""
+            VALUE "CompanyName", "Sighthound, Inc."
+            VALUE "FileDescription", "Sighthound Video Launch Service"
+            VALUE "FileVersion", "1.0"
+            VALUE "InternalName", "shlauncher"
+            VALUE "LegalCopyright", "Copyright 2014 Sighthound, Inc."
+            VALUE "LegalTrademarks", ""
+            VALUE "OriginalFilename", "shaunch.exe"
+            VALUE "PrivateBuild", ""
+            VALUE "ProductName", "Sighthound Video Launch Service"
+            VALUE "ProductVersion", "1.0"
+            VALUE "SpecialBuild", ""
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0409, 0x0025
+    }
+}
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+1                  RT_MANIFEST    ".\\manifest.xml"

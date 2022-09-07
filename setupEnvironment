@@ -1,0 +1,124 @@
+#!/bin/bash
+
+# ----------------------------------------------------------------------
+#  Copyright (C) 2008-2009 Vitamin D, Inc. All rights reserved.
+#
+#  The information and source code contained herein is the
+#  exclusive property of Vitamin D, Inc. No part of this software
+#  may be used, reproduced, stored or distributed in any form,
+#  without explicit written authorization from Vitamin D, Inc.
+# ----------------------------------------------------------------------
+#
+# Shell script to setup the environment for SmartVideo.
+# This is intended to be sourced by other scripts, since that's the only way
+# that it can modify the caller's environment.  In other words, run with
+#   source setupEnvironment
+#
+# Things that this script does
+# * Modify path-like variables (PATH, PYTHONPATH, DYLD_XXX_PATH) to point to
+#   our libraries.
+# * Create a few environment variables describing where certain libraries are,
+#   in case other people need to find them.
+#
+# Conventions:
+# * Variables starting with _se_ should be considered private to this Makefile.
+#   If you need them elsewhere, rename them (PLEASE!)
+# * When you see DIR, that will be a Windows dir on Windows ("C:\...").  When
+#   you see UNIXDIR, that will always be a unix dir ("/cygdrive/c/...").  On
+#   Mac, these should always be the same.
+
+# Only execute this file once...
+if [ -z "$_se_ALREADYRAN" ]; then
+    export _se_ALREADYRAN=1
+
+    # Get this path (absolute!)
+    _se_SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    echo "=================================================================== Running setupEnvironment in ${_se_SCRIPTDIR}"
+    export SMARTVIDEO_UNIXDIR=$_se_SCRIPTDIR
+    export SMARTVIDEO_SRCDIR=$_se_SCRIPTDIR
+
+    echo "Params passed $@, params count $#"
+    while [[ $# > 0 ]]
+    do
+        param="$1"
+
+        case $param in
+            -srcdir|--srcdir)
+                shift
+                if [[ $# -eq 0 ]]; then
+                    "Source directory parameter missing"
+                    exit 1
+                fi
+                export SMARTVIDEO_SRCDIR=$1
+                shift # past argument
+                ;;
+            *)
+                break
+            ;;
+        esac
+    done
+
+    # PLATFORM-SPECIFIC DEFINES
+    # -------------------------
+    # With these, we can make the rest of the makefile generic.
+    echo `which python`
+    export SVARCH="x86_64"
+
+    if [ `uname` = "Darwin" ]; then
+      _se_PLATFORM="Mac"
+      _se_PATHSEP=":"
+      _se_SHARED_LIB_FOLDER="lib"
+      export SMARTVIDEODIR=$_se_SCRIPTDIR
+      _se_ROOT_TMP=$_se_SCRIPTDIR
+    else
+      _se_PLATFORM="Win"
+      _se_PATHSEP=";"
+      _se_SHARED_LIB_FOLDER="bin"
+      _se_ROOT_TMP="${TMP}"
+      export SMARTVIDEODIR=`cygpath -w $_se_SCRIPTDIR`
+    fi
+
+
+    # If we're in the middle of obfuscating, we have to place certain libraries
+    # that we don't want to obfuscate one level up...
+    if [ -z "$OBS" ]; then
+        _se_LIBDIR="$SMARTVIDEODIR"
+        _se_LIB_UNIXDIR="$SMARTVIDEO_UNIXDIR"
+    else
+        _se_LIBDIR="$SMARTVIDEODIR""/.."
+        _se_LIB_UNIXDIR="$SMARTVIDEO_UNIXDIR""/.."
+    fi
+
+    # Find libraries that we need the native path for...
+    export XNATDIR="$_se_LIBDIR""/xnat"
+    export LAUNCHDIR="$_se_LIBDIR""/launch"
+    export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+    if [ `uname` = "Darwin" ]; then
+      PYMODULES_DIR1=${SV3RDPARTYDIR}/lib/python2.7/site-packages
+    else
+      PYMODULES_DIR1=`cygpath -w ${SV3RDPARTYDIR}/lib/python2.7/site-packages`
+    fi
+
+
+    # Setup PYTHONPATH to include anything we need.  Since python is the
+    # Win32 version of python, we need to use native dirs/path separators.
+
+    # PYTHONPATH=
+    echo PYTHONPATH=$PYTHONPATH
+    echo SVINSTALLDIR=$SVINSTALLDIR
+    echo SV3RDPARTYDIR=$SV3RDPARTYDIR
+    python -c 'import sys; print sys.path'
+    PYTHONPATH="${PYTHONPATH}${_se_PATHSEP}${SMARTVIDEODIR}"
+    PYTHONPATH="${PYTHONPATH}${_se_PATHSEP}${XNATDIR}"
+    PYTHONPATH="${PYTHONPATH}${_se_PATHSEP}${LAUNCHDIR}"
+    PYTHONPATH="${PYTHONPATH}${_se_PATHSEP}${PYMODULES_DIR1}"
+
+    echo "PYTHONPATH=${PYTHONPATH}"
+    export PYTHONPATH
+    echo "PATH=${PATH}"
+    echo "Python=`which python`"
+
+    echo "=================================================================== Done running setupEnvironment"
+else
+    echo "Environment is already set up!"
+fi

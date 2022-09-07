@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	256AC3D80F4B6AC300CF3369 /* UpdaterAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {605, 299}}";
+			sepNavSelRange = "{222, 0}";
+			sepNavVisRange = "{0, 353}";
+			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
+		};
+	};
+	256AC3D90F4B6AC300CF3369 /* UpdaterAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 1764}}";
+			sepNavSelRange = "{431, 0}";
+			sepNavVisRange = "{0, 891}";
+			sepNavWindowFrame = "{{653, 150}, {750, 558}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = C4F5C8FB110687E100C66FA6 /* Updater */;
+		activeSDKPreference = macosx10.7;
+		activeTarget = 8D1107260486CEB800E47090 /* Updater */;
+		breakpoints = (
+			C4F5C90E1106881E00C66FA6 /* UpdaterAppDelegate.m:26 */,
+			C4625D0B11068AB5008C80CB /* UpdaterAppDelegate.m:88 */,
+			C4625D1111068B1E008C80CB /* UpdaterAppDelegate.m:76 */,
+		);
+		codeSenseManager = C4F5C90C110687F500C66FA6 /* Code sense */;
+		executables = (
+			C4F5C8FB110687E100C66FA6 /* Updater */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXBookmarksDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBookmarksDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					200,
+					385.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBookmarksDataSource_LocationID,
+					PBXBookmarksDataSource_NameID,
+					PBXBookmarksDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					466,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					464,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					576,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					544,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 285640960;
+			PBXWorkspaceStateSaveDate = 285640960;
+		};
+		perUserProjectItems = {
+			C4625CF611068A3B008C80CB /* PBXTextBookmark */ = C4625CF611068A3B008C80CB /* PBXTextBookmark */;
+			C4625CFA11068A3B008C80CB /* PBXTextBookmark */ = C4625CFA11068A3B008C80CB /* PBXTextBookmark */;
+			C4625CFB11068A3B008C80CB /* PBXTextBookmark */ = C4625CFB11068A3B008C80CB /* PBXTextBookmark */;
+			C4625CFC11068A3B008C80CB /* PBXTextBookmark */ = C4625CFC11068A3B008C80CB /* PBXTextBookmark */;
+			C4625D0411068AA1008C80CB /* PBXTextBookmark */ = C4625D0411068AA1008C80CB /* PBXTextBookmark */;
+			C4625D0511068AA1008C80CB /* PBXTextBookmark */ = C4625D0511068AA1008C80CB /* PBXTextBookmark */;
+			C4625D0611068AA1008C80CB /* PBXTextBookmark */ = C4625D0611068AA1008C80CB /* PBXTextBookmark */;
+			C4625D3711069DB6008C80CB /* PBXTextBookmark */ = C4625D3711069DB6008C80CB /* PBXTextBookmark */;
+			C4F5C919110688DF00C66FA6 /* PBXTextBookmark */ = C4F5C919110688DF00C66FA6 /* PBXTextBookmark */;
+			C4F5C91A110688DF00C66FA6 /* PBXTextBookmark */ = C4F5C91A110688DF00C66FA6 /* PBXTextBookmark */;
+		};
+		sourceControlManager = C4F5C90B110687F500C66FA6 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* Updater */ = {
+		activeExec = 0;
+		executables = (
+			C4F5C8FB110687E100C66FA6 /* Updater */,
+		);
+	};
+	C4625CE91106899B008C80CB /* UpdaterAppDelegate.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = UpdaterAppDelegate.m;
+		path = /Users/bob/projects/smartvideo/frontEnd/updater/MacUpdater/UpdaterAppDelegate.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 1778}}";
+			sepNavSelRange = "{259, 8}";
+			sepNavVisRange = "{202, 358}";
+			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
+		};
+	};
+	C4625CF611068A3B008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* UpdaterAppDelegate.h */;
+		name = "UpdaterAppDelegate.h: 20";
+		rLen = 0;
+		rLoc = 353;
+		rType = 0;
+		vrLen = 353;
+		vrLoc = 0;
+	};
+	C4625CF911068A3B008C80CB /* AppKitErrors.h */ = {
+		isa = PBXFileReference;
+		name = AppKitErrors.h;
+		path = /System/Library/Frameworks/AppKit.framework/Headers/AppKitErrors.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1746, 532}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2113}";
+		};
+	};
+	C4625CFA11068A3B008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* UpdaterAppDelegate.m */;
+		name = "UpdaterAppDelegate.m: 17";
+		rLen = 0;
+		rLoc = 329;
+		rType = 0;
+		vrLen = 851;
+		vrLoc = 40;
+	};
+	C4625CFB11068A3B008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* UpdaterAppDelegate.h */;
+		name = "UpdaterAppDelegate.h: 20";
+		rLen = 0;
+		rLoc = 353;
+		rType = 0;
+		vrLen = 353;
+		vrLoc = 0;
+	};
+	C4625CFC11068A3B008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4625CE91106899B008C80CB /* UpdaterAppDelegate.m */;
+		name = "UpdaterAppDelegate.m: 26";
+		rLen = 0;
+		rLoc = 595;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 269;
+	};
+	C4625D0411068AA1008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4625CF911068A3B008C80CB /* AppKitErrors.h */;
+		name = "AppKitErrors.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2113;
+		vrLoc = 0;
+	};
+	C4625D0511068AA1008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4625CE91106899B008C80CB /* UpdaterAppDelegate.m */;
+		rLen = 0;
+		rLoc = 25;
+		rType = 1;
+	};
+	C4625D0611068AA1008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4625CF911068A3B008C80CB /* AppKitErrors.h */;
+		name = "AppKitErrors.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2113;
+		vrLoc = 0;
+	};
+	C4625D0911068AB5008C80CB /* UpdaterAppDelegate.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = UpdaterAppDelegate.m;
+		path = /Users/bob/projects/smartvideo/frontEnd/updater/MacUpdater/UpdaterAppDelegate.m;
+		sourceTree = "<group>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 1764}}";
+			sepNavSelRange = "{431, 0}";
+			sepNavVisRange = "{147, 928}";
+		};
+	};
+	C4625D0B11068AB5008C80CB /* UpdaterAppDelegate.m:88 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4625D0911068AB5008C80CB /* UpdaterAppDelegate.m */;
+		functionName = "-_extractDMG:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 88;
+		location = Updater;
+		modificationTime = 285645592.653603;
+		state = 1;
+	};
+	C4625D1111068B1E008C80CB /* UpdaterAppDelegate.m:76 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4625D0911068AB5008C80CB /* UpdaterAppDelegate.m */;
+		functionName = "-_extractDMG:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 76;
+		location = Updater;
+		modificationTime = 285645607.105065;
+		state = 1;
+	};
+	C4625D3711069DB6008C80CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* UpdaterAppDelegate.m */;
+		name = "UpdaterAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 431;
+		rType = 0;
+		vrLen = 891;
+		vrLoc = 0;
+	};
+	C4F5C8FB110687E100C66FA6 /* Updater */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+			YES,
+			YES,
+		);
+		argumentStrings = (
+			"\"/Users/bob/Library/Application Support/Vitamin D Video/updater.dmg\"",
+			/Applications/,
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Updater;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	C4F5C90B110687F500C66FA6 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	C4F5C90C110687F500C66FA6 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	C4F5C90E1106881E00C66FA6 /* UpdaterAppDelegate.m:26 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 256AC3D90F4B6AC300CF3369 /* UpdaterAppDelegate.m */;
+		functionName = "-_extractDMG:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 26;
+		location = Updater;
+		modificationTime = 285645595.341419;
+		state = 1;
+	};
+	C4F5C919110688DF00C66FA6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* UpdaterAppDelegate.m */;
+		name = "UpdaterAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 408;
+		rType = 0;
+		vrLen = 859;
+		vrLoc = 40;
+	};
+	C4F5C91A110688DF00C66FA6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* UpdaterAppDelegate.h */;
+		name = "UpdaterAppDelegate.h: 11";
+		rLen = 54;
+		rLoc = 172;
+		rType = 0;
+		vrLen = 366;
+		vrLoc = 0;
+	};
+}

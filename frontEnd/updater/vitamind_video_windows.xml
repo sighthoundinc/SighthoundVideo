@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>Vitamin D Video Changelog</title>
+     <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+         <item>
+            <title>Version 1.0</title>
+            <description><![CDATA[
+                <html>
+                    <body>
+                        <h3>1.0 Beta Release Notes</h3>
+							<p>Initial Release</p>
+							
+                    </body>
+                </html>
+            ]]></description>
+
+			
+            <enclosure url="http://update:c0dliver0oil@www.vitamindinc.com/update/vitamindvideo/Vitamin%20D%20Video%20Setup.exe" sparkle:version="r5396" shortVersionString="1.0" length="33624088" type="application/octet-stream" />
+             </item>
+
+         
+   </channel>
+</rss>
