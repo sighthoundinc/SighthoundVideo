@@ -8,7 +8,7 @@ fi
 SCRIPT_PATH="`dirname \"$0\"`" 
 APP_DIR=$1
 OUTPUT_FOLDER=$2
-APP_NAME="SighthoundVideo"
+APP_NAME="ArdenAI"
 if [ $# -gt 2 ]; then
     APP_NAME=$3
 fi
@@ -43,7 +43,7 @@ hdiutil convert -format UDZO "${OUTPUT_FOLDER}/rw/${DMG_NAME}" -o "${OUTPUT_FOLD
 # Attach the SLA
 SLA_TEMPLATE="${SCRIPT_PATH}/../frontEnd/resources/SLATemplate.xml"
 SLA_TEMPLATE_RW="${OUTPUT_FOLDER}/rw/SLATemplate.xml"
-SLA="${SCRIPT_PATH}/../frontEnd/docs/Sighthound Video SW License Agreement.rtf"
+SLA="${SCRIPT_PATH}/../frontEnd/docs/Arden AI SW License Agreement.rtf"
 
 SLA_BASE64=`base64 -i "${SLA}"`
 cp "${SLA_TEMPLATE}" "${SLA_TEMPLATE_RW}" || exit 1

@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -175,7 +175,7 @@ def main():
     except:
         try:
             dump = traceback.format_exc()
-            dumpFile = "sighthound_%s_%d_%s.log" % (errFileTag,
+            dumpFile = "ardenai_%s_%d_%s.log" % (errFileTag,
                 int(time.time() * 1000), uuid.uuid4().hex)
             fl = open(os.path.join(tempfile.gettempdir(), dumpFile), "w")
             fl.write(dump)

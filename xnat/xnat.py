@@ -7,16 +7,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -83,7 +83,7 @@ def runXNAT(outp, *args):
     except:
         f = None
         try:
-            f = open("/tmp/sighthound_xnat_status", "w")
+            f = open("/tmp/ardenai_xnat_status", "w")
             f.write("exception: " + traceback.format_exc())
         except:
             pass
@@ -129,7 +129,7 @@ class XNAT:
         self._timeout = timeout;
         self._logger = logger
         self._workdir = workdir
-        exe = "SighthoundXNAT" + (".exe" if _kIsWin else "")
+        exe = "Arden.aiXNAT" + (".exe" if _kIsWin else "")
         if hasattr(sys, "frozen"):
             self._exe = os.path.join(os.path.dirname(sys.executable), exe)
         else:

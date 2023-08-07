@@ -13,7 +13,7 @@ if (APPLE)
         COMMAND ${CMAKE_CURRENT_LIST_DIR}/../scripts/generateShsudoHeader.sh ${REV_HEADER}
         COMMENT "=================== Generating ${REV_HEADER} ..."
     )
-    set(SHLAUNCH_SUDO SighthoundVideoLauncher)
+    set(SHLAUNCH_SUDO ArdenAILauncher)
     add_executable(${SHLAUNCH_SUDO} shsudoMac/shsudoMac/shsudoMac/shsudo.m ${REV_HEADER})
     set(SHLAUNCH_ADDITIONAL_INCLUDES ${CMAKE_CURRENT_BINARY_DIR})
     target_include_directories(${SHLAUNCH_SUDO} PRIVATE ${SHLAUNCH_ADDITIONAL_INCLUDES})

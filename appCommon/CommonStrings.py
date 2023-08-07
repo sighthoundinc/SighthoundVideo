@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,26 +54,26 @@ def __fileUrlHelper(url):
 
 def OB_ASID(a): return a
 
-# Info about Sighthound, the creator of the app...
-kSighthoundCompanyName      = "Sighthound, Inc."
-kSighthoundWebsite          = "www.sighthound.com"
-kSighthoundWebsiteBaseUrl   = "https://%s/" % kSighthoundWebsite
+# Info about Arden.ai, the creator of the app...
+kArden.aiCompanyName      = "Arden.ai, Inc."
+kArden.aiWebsite          = "www.ardenai.com"
+kArden.aiWebsiteBaseUrl   = "https://%s/" % kArden.aiWebsite
 kOpenSourceVersion=True
 
 
 # Info about whatever company is shipping the app (the OEM)...
-kOemName         = kSighthoundCompanyName
-kOemWebsite      = kSighthoundWebsite
+kOemName         = kArden.aiCompanyName
+kOemWebsite      = kArden.aiWebsite
 
 
 
 # Names of the apps...
-kAppName          = "Sighthound Video"
-kExeName          = "Sighthound Video"  # Limit to 16 chars for Mac
-kBackendExeName   = "Sighthound Agent"
-kWebcamExeName    = "Sighthound USB"
-kWebserverExeName = "Sighthound Web"
-kXNATExeName      = "SighthoundXNAT"
+kAppName          = "Arden AI"
+kExeName          = "Arden AI"  # Limit to 16 chars for Mac
+kBackendExeName   = "Arden.ai Agent"
+kWebcamExeName    = "Arden.ai USB"
+kWebserverExeName = "Arden.ai Web"
+kXNATExeName      = "Arden.aiXNAT"
 
 # Backend command line argument: identifies an agent/backend process.
 kBackendMarkerArg = "--sh-2e4fce7e"
@@ -111,24 +111,24 @@ kApiVersion = "1.1"
 
 # These try to make the URLs below easier to customize if we have OEMs that
 # have their own of any of these...
-kStoreWebsite         = kSighthoundWebsite
+kStoreWebsite         = kArden.aiWebsite
 
-_kDocumentationBaseUrl = "https://%s/app-help/" % kSighthoundWebsite
+_kDocumentationBaseUrl = "https://%s/app-help/" % kArden.aiWebsite
 _kStoreBaseUrl         = _kDocumentationBaseUrl
 
 
 
-kDocumentationIconUrl = "https://%s/favicon.ico" % kSighthoundWebsite
+kDocumentationIconUrl = "https://%s/favicon.ico" % kArden.aiWebsite
 kDocumentationDescription = "View Online Reference Guide"
 
 kOemUrl               = "http://%s/"            % kOemWebsite
 
 
 
-kCopyrightMoreInfoUrl = "https://%s/opensource/" % kSighthoundWebsite   # (!!!) ALSO IN the EULA (.rtf and SLAResources.r)
+kCopyrightMoreInfoUrl = "https://%s/opensource/" % kArden.aiWebsite   # (!!!) ALSO IN the EULA (.rtf and SLAResources.r)
 
 
-kForumsUrl         = kSighthoundWebsiteBaseUrl + "forums"
+kForumsUrl         = kArden.aiWebsiteBaseUrl + "forums"
 
 
 kDocumentationUrl  = _kDocumentationBaseUrl + "reference-guide"
@@ -153,18 +153,18 @@ kRenewSupportUrl = _kStoreBaseUrl + "renew?sn=%s"
 kDirectBuyBasic = _kStoreBaseUrl + "buy-basic?id=%s&mach=%s"
 kDirectBuyPro = _kStoreBaseUrl + "buy-pro?id=%s&mach=%s"
 
-kServicesHost = "licensing.sighthound.com"
+kServicesHost = "licensing.ardenai.com"
 
-kSupportEmail = "support@sighthound.com"
+kSupportEmail = "support@ardenai.com"
 
 # Mac PLST strings
-kBundleIdentifier  = "com.sighthound.sighthoundvideo"
+kBundleIdentifier  = "com.ardenai.ardenaivideo"
 kMinMacOSVersion   = "10.10"
 
 
 
 # The name of the license agreement RTF (used in the build)...
-kSoftwareLicenseAgreementRtf = "Sighthound Video SW License Agreement.rtf"
+kSoftwareLicenseAgreementRtf = "Arden AI SW License Agreement.rtf"
 kSoftwareLicenseAgreementResource = "SLAResources.r"  # Also in FrontEnd.mk
 
 
@@ -180,7 +180,7 @@ kCopyrightStr = (
     u"""Pthreads-win32 copyright © 1998 John E. Bossom and """
     u"""copyright © 1999, 2006 pthreads-win32 contributors. """
     u"""FreeType © 2006-2021 The FreeType Project.""") % (
-    kCopyrightYear, kSighthoundCompanyName,
+    kCopyrightYear, kArden.aiCompanyName,
 )
 kCopyrightMoreInfoStr = "Click here for detailed copyright information."
 
@@ -326,7 +326,7 @@ kSearchingOnString = "Searching on %s..."
 kWebDirName = "web"
 
 # Environment variable to place the web server directory at an arbitrary spot.
-kWebDirEnvVar = "SIGHTHOUND_WEBDIR"
+kWebDirEnvVar = "ARDEN.AI_WEBDIR"
 
 # Web server status is reported into a file in the web directory initially and
 # every time there is a change to the web server or the port opening. The state
@@ -369,24 +369,24 @@ kDefaultRecordAudio = True
 
 # The hostname the notification gateway.
 # We are moving away from Pushwoosh and from Linode to AWS.  The old Linode server(s) are at the name
-# push.sighthound.com; the new AWS server(s) are at push2.sighthound.com.  At some point we will also
-# point push.sighthound.com at the AWS cluster.  There is also (sometimes) a push2.staging.sighthound.com
+# push.ardenai.com; the new AWS server(s) are at push2.ardenai.com.  At some point we will also
+# point push.ardenai.com at the AWS cluster.  There is also (sometimes) a push2.staging.ardenai.com
 # running in the Engineering cluster.
-kGatewayHost    = "push2.sighthound.com"
+kGatewayHost    = "push2.ardenai.com"
 # The URL path for the notification gateway.
 kGatewayPath = "/gateway.php"
 # Timeout for talking to the notification gateway.
 kGatewayTimeoutSecs = 20
 
 # The gateway for routing IFTTT messages.
-kIftttHost = "ifttt.sighthound.com"
+kIftttHost = "ifttt.ardenai.com"
 # IFTTT path: where to send events to.
 kIftttPathTrigger = "/ifttt.php"
 # IFTTT path: to save the current state, i.e. camera and rule names.
 kIftttPathState = "/ifttt.php/state"
 
 
-kUploaderProxyHost = "updog.sighthoundvideo.com"
+kUploaderProxyHost = "updog.ardenaivideo.com"
 kUploaderProxyPath = "/fetch-url/problem-video"
 
 # Users of old licenses must have updated by this point in time. The feature

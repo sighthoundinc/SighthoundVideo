@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,9 +54,9 @@ from appCommon.LicenseUtils import kEditionField, kStarterEdition
 from LoginDialog import LoginDialog
 from TrialBanner import kBackgroundColor, styleBannerLink
 
-_kWarningPaidText = ("""Link your license with a Sighthound Account """
+_kWarningPaidText = ("""Link your license with a Arden.ai Account """
         """to continue receiving updates.""")
-_kWarningStarterText = ("""Sign in with a Sighthound Account to """
+_kWarningStarterText = ("""Sign in with a Arden.ai Account to """
         """continue receiving updates.""")
 _kLearnMoreText = "Learn More"
 _kSignInText = "Sign In"

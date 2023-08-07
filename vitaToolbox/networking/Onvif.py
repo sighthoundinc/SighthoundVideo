@@ -7,16 +7,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -207,7 +207,7 @@ _kOnvifStreamTypes = ['RTP-Unicast']
 _kOnvifTransportTypes = ['RTSP', 'HTTP', 'UDP']
 
 # Things to build an ONVIF URL.
-_kOnvifHostnameSuffix = ".sighthoundonvif"
+_kOnvifHostnameSuffix = ".ardenaionvif"
 
 # Max number of times to send probe requests.
 _kWsDiscoveryMulticastUdpMaxRepeat = 4
@@ -783,7 +783,7 @@ def extractUuidFromOnvifUrl(url):
     """Extract the UUID from an ONVIF URL.
 
     ONVIF URLs look like this:
-      scheme://[[user][:pass]@]encodedUuid.sighthoundonvif.[:port]/path
+      scheme://[[user][:pass]@]encodedUuid.ardenaionvif.[:port]/path
 
     @param  url        The URL. Should be Unicode or UTF-8 encoded.
     @return uuid       The UUID, in unicode.
@@ -832,7 +832,7 @@ def realizeOnvifUrl(deviceDict, url):
     """Given an ONVIF URL, convert it into a real one.
 
     ONVIF URLs look like this:
-      scheme://[[user][:pass]@]encodedUuid.sighthoundonvif.[:port]/path
+      scheme://[[user][:pass]@]encodedUuid.ardenaionvif.[:port]/path
 
     We convert it to a real one by getting the base address from ONVIF,
     then adding the user/pass as well as the path.
@@ -916,7 +916,7 @@ def constructOnvifUrl(uuid, username=None, password=None, streamUri=None):
     """Create an ONVIF URL.
 
     ONVIF URLs look like this:
-      scheme://[[user][:pass]@]encodedUuid.sighthoundonvif.[:port]/path
+      scheme://[[user][:pass]@]encodedUuid.ardenaionvif.[:port]/path
 
     @param  uuid         The UUID to encode.  Should either be Unicode or UTF-8.
     @param  credentials  (username, password) This function handles

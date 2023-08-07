@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ from vitaToolbox.wx.TextCtrlUtils import setHyperlinkColors
 _kTitle = "Sign In"
 
 _kErrorText = (
-"""There was a problem authenticating your Sighthound account. """
+"""There was a problem authenticating your Arden.ai account. """
 """Please enter your email address and password to sign in again."""
 )
 
@@ -73,7 +73,7 @@ _kLegacyPaidAction = "."
 _kLegacyStarterAction = " and claim your free Pro trial."
 
 _kWelcomeTextLegacy = (
-"""Sighthound Video now requires a Sighthound Account. This system allows """
+"""Arden AI now requires a Arden.ai Account. This system allows """
 """for easier license storage, activation, upgrades, and will enable the """
 """addtion of many new features going forward. You must create an account """
 """to continue receiving application updates"""

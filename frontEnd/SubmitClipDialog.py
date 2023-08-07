@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -52,10 +52,10 @@ _kConsentHeight = 200 # Height for consent static text
 kConsentText = """
 <body style="background-color: #dddddd">
 <p>
-By clicking <b>OK</b>, you agree to provide selected video clips (including any notes) in accordance with the <a href="https://www.sighthound.com/privacy">Sighthound Privacy Policy</a> and <a href="https://www.sighthound.com/terms">Terms of Use</a>.
+By clicking <b>OK</b>, you agree to provide selected video clips (including any notes) in accordance with the <a href="https://www.ardenai.com/privacy">Arden.ai Privacy Policy</a> and <a href="https://www.ardenai.com/terms">Terms of Use</a>.
 <br>
 <br>
-Your data will only be used by Sighthound and not shared with any third parties.
+Your data will only be used by Arden.ai and not shared with any third parties.
 </p>
 """.strip()
 
@@ -68,7 +68,7 @@ class SubmitClipConsentDialog(wx.Dialog):
 
         @param  parent         The parent window.
         """
-        wx.Dialog.__init__(self, parent, -1, "Submit clip to Sighthound for analysis ...")
+        wx.Dialog.__init__(self, parent, -1, "Submit clip to Arden.ai for analysis ...")
 
         try:
             # Create the main sizer.
@@ -132,7 +132,7 @@ class SubmitClipDetailsDialog(wx.Dialog):
 
         @param  parent         The parent window.
         """
-        wx.Dialog.__init__(self, parent, -1, "Submit clip to Sighthound for analysis ...")
+        wx.Dialog.__init__(self, parent, -1, "Submit clip to Arden.ai for analysis ...")
 
         try:
             # Create the main sizer.

@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.sighthound.video.launch</string>
+    <string>com.ardenai.video.launch</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/markushahn/Desktop/Sighthound Video.app/Contents/MacOS/shlaunch</string>
+        <string>/Users/markushahn/Desktop/Arden AI.app/Contents/MacOS/shlaunch</string>
     </array>
     <key>KeepAlive</key>
     <true/>

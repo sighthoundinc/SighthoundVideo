@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -230,7 +230,7 @@ _kCameraTable = [
     ("AirLive", "AirLive (other)",            ("rtsp://", "/h264/media.amp", None)),  # User reported, bug 3108.
 
 
-    # Alibi - user confirmed, http://www.sighthound.com/forums/topic11615
+    # Alibi - user confirmed, http://www.ardenai.com/forums/topic11615
     ("Alibi", "Alibi ALI-IPU3013R",  ("rtsp://", "/play1.sdp", None)),
     ("Alibi", "Alibi (other)",       ("rtsp://", "/play1.sdp", None)),
 
@@ -438,7 +438,7 @@ _kCameraTable = [
     ("DB Power", "DB Power (other)",  ("http://", "/videostream.cgi", None)),
 
 
-    ("Dericam", "Dericam M801W",    ("http://", "/videostream.asf", None)),    # User reported, http://www.sighthound.com/forums/topic11519
+    ("Dericam", "Dericam M801W",    ("http://", "/videostream.asf", None)),    # User reported, http://www.ardenai.com/forums/topic11519
     ("Dericam", "Dericam (other)",  ("http://", "/videostream.asf", None)),
 
 
@@ -718,8 +718,8 @@ _kCameraTable = [
 
 
     # NEO Coolcam
-    ("NEO Coolcam", "NEO Coolcam NIP-06",  ("http://", "/videostream.asf?user=__USERNAME__&pwd=__PASSWORD__", None)),   # User report: http://www.sighthound.com/forums/viewtopic.php?f=5&t=5&start=10
-    ("NEO Coolcam", "NEO Coolcam (other)", ("http://", "/videostream.asf?user=__USERNAME__&pwd=__PASSWORD__", None)),   # User report: http://www.sighthound.com/forums/viewtopic.php?f=5&t=5&start=10
+    ("NEO Coolcam", "NEO Coolcam NIP-06",  ("http://", "/videostream.asf?user=__USERNAME__&pwd=__PASSWORD__", None)),   # User report: http://www.ardenai.com/forums/viewtopic.php?f=5&t=5&start=10
+    ("NEO Coolcam", "NEO Coolcam (other)", ("http://", "/videostream.asf?user=__USERNAME__&pwd=__PASSWORD__", None)),   # User report: http://www.ardenai.com/forums/viewtopic.php?f=5&t=5&start=10
 
 
     # Marmitek notes:

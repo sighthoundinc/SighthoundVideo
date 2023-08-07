@@ -3,22 +3,22 @@
 #*****************************************************************************
 #
 # NetworkMessageServer.py
-#     XML RPC gateway to Sighthound Video API. Used mostly by web server/remote client endpoint
+#     XML RPC gateway to Arden AI API. Used mostly by web server/remote client endpoint
 #
 #
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -184,7 +184,7 @@ _kThreadSafeFunctions = [
     "memstorePut", "memstoreGet", "memstoreRemove",
     "userLogin", "refreshLicenseList", "acquireLicense", "getLicenseSettings",
     "getVersion", "getTimePreferences", "setTimePreferences",
-    "sendIftttMessage", "launchedByService", "remoteSubmitClipToSighthound"
+    "sendIftttMessage", "launchedByService", "remoteSubmitClipToArden.ai"
 ]
 
 _kRemoteWhitelist = [
@@ -219,11 +219,11 @@ _kRemoteWhitelist = [
     'remoteUnregisterDevice2',
     'remoteGetClipInfo',
     'enableNotifications',
-    'remoteSubmitClipToSighthound'
+    'remoteSubmitClipToArden.ai'
 ]
 
 # The version we send to our SV notification server.  This is new at about
-# Sighthound Video 5.5 and (more importantly) iOS and Android app versions
+# Arden AI 5.5 and (more importantly) iOS and Android app versions
 # newer than about July 2017.  Those implement a new notification receiver
 # using Google Firebase instead of Pushwoosh.
 _kNotifyVersion_2_NoPushwoosh = 2
@@ -735,7 +735,7 @@ class NetworkMessageServer(object):
             (self._setLicenseSettings, "setLicenseSettings"),
 
             # External services integration
-            (self._remoteSubmitClipToSighthound, "remoteSubmitClipToSighthound"),
+            (self._remoteSubmitClipToArden.ai, "remoteSubmitClipToArden.ai"),
 
             # Error cases...
             (self._sendCorruptDbMessage, "sendCorruptDbMessage"),
@@ -3524,8 +3524,8 @@ class NetworkMessageServer(object):
         self._prefs.setPref('licenseSettings', licenseSettings)
 
     ###########################################################
-    def _remoteSubmitClipToSighthound(self, camLocation, note, startTime, stopTime):
-        """ Queues the upload of a clip defined by the set of parameters to Sighthound for analysis
+    def _remoteSubmitClipToArden.ai(self, camLocation, note, startTime, stopTime):
+        """ Queues the upload of a clip defined by the set of parameters to Arden.ai for analysis
         @param  cameraName   The name of the camera to retrieve a clip from.
         @param  note         Optional text to accompany the video
         @param  startTime    A (startSecond, startMs) of the absolute ms the
@@ -3540,7 +3540,7 @@ class NetworkMessageServer(object):
             self._logger.error("Invalid time interval specified for the clip (%s->%s)" % (str(startTime), str(stopTime)))
             return
 
-        self._queue.put([MessageIds.msgIdSubmitClipToSighthound, camLocation, note, realStartTime, duration])
+        self._queue.put([MessageIds.msgIdSubmitClipToArden.ai, camLocation, note, realStartTime, duration])
 
     ###########################################################
     def _areRulesLocked(self):

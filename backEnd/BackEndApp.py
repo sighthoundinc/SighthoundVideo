@@ -12,16 +12,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -3085,7 +3085,7 @@ class BackEndApp(object):
             self._updateUpnp(msg[1], msg[2], msg[3])
         elif msgId == MessageIds.msgIdUpdateOnvif:
             self._updateOnvif(msg[1], msg[2], msg[3])
-        elif msgId == MessageIds.msgIdSubmitClipToSighthound:
+        elif msgId == MessageIds.msgIdSubmitClipToArden.ai:
             camera = msg[1]
             note = msg[2]
             startTime = int(msg[3])

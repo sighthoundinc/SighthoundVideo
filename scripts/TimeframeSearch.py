@@ -19,13 +19,13 @@ from vitaToolbox.loggingUtils.LoggingUtils import VitaLogger
 from vitaToolbox.strUtils.EnsureUnicode import ensureUnicode
 
 if sys.platform == 'win32':
-    _kObjDb2Path = "c:\\Users\\s.hound\\AppData\\Local\\Sighthound Video\\videos\\objdb2"
-    _kClipDb2Path = "c:\\Users\\s.hound\\AppData\\Local\\Sighthound Video\\videos\\clipdb"
+    _kObjDb2Path = "c:\\Users\\s.hound\\AppData\\Local\\Arden AI\\videos\\objdb2"
+    _kClipDb2Path = "c:\\Users\\s.hound\\AppData\\Local\\Arden AI\\videos\\clipdb"
     _kVideoPath = "e:\\archive"
 else:
-    _kObjDb2Path = "/Users/alex/Library/Application Support/Sighthound Video/videos/objdb2"
-    _kClipDb2Path = "/Users/alex/Library/Application Support/Sighthound Video/videos/clipdb"
-    _kVideoPath = "/Users/alex/Library/Application Support/Sighthound Video/My Videos/archive"
+    _kObjDb2Path = "/Users/alex/Library/Application Support/Arden AI/videos/objdb2"
+    _kClipDb2Path = "/Users/alex/Library/Application Support/Arden AI/videos/clipdb"
+    _kVideoPath = "/Users/alex/Library/Application Support/Arden AI/My Videos/archive"
 
 _kCloudToken = "c8n5V5bFSUIM9VNIXS3ey7Rui72jqV5vg6pl"
 _kFrameOffset = 2
@@ -221,7 +221,7 @@ class TimeframeSearch:
     def cloudCall(self, image, name):
         output = []
         headers = {"Content-type": "application/json", "X-Access-Token": _kCloudToken}
-        conn = httplib.HTTPSConnection("dev.sighthoundapi.com",
+        conn = httplib.HTTPSConnection("dev.ardenaiapi.com",
             context=ssl.SSLContext(ssl.PROTOCOL_TLSv1))
 
         with BytesIO() as f:

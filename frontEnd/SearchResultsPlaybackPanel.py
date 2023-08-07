@@ -10,16 +10,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1740,13 +1740,13 @@ class SearchResultsPlaybackPanel(BorderImagePanel):
             # Get selection ID list
             for clip in multiUploadClips:
                 camera, startTime, stopTime = self._resultsModel.getClipInformation(clip)
-                self._backEndClient.submitClipToSighthound(camera, note, startTime, stopTime-startTime)
+                self._backEndClient.submitClipToArden.ai(camera, note, startTime, stopTime-startTime)
         else:
             # Tell backend to queue the clip export
             camera = self._resultsModel.getCurrentCameraName()
             startTime = self._resultsModel.getCurrentClipStart()
             stopTime = self._resultsModel.getCurrentClipStop()
-            self._backEndClient.submitClipToSighthound(camera, note, startTime, stopTime-startTime)
+            self._backEndClient.submitClipToArden.ai(camera, note, startTime, stopTime-startTime)
 
     ###########################################################
     def OnExportProgress(self, percentage):
@@ -2154,7 +2154,7 @@ class _openGLWarningDialog(wx.Dialog):
                     "playback performance may be impacted. This can occur when "
                     "operating over software such as Remote Desktop. If "
                     "encountered under other circumstances please select "
-                    "\"Help->Report a Problem...\" or email support@sighthound.com.")
+                    "\"Help->Report a Problem...\" or email support@ardenai.com.")
 
             self._check = wx.CheckBox(self, -1, "Don't show me this again")
             sizer.Add(text, 0, wx.ALL, self.kDialogPadding)

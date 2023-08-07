@@ -8,16 +8,16 @@
 #*****************************************************************************
 #
  *
- * Copyright 2013-2022 Sighthound, Inc.
+ * Copyright 2013-2022 Arden.ai, Inc.
  *
  * Licensed under the GNU GPLv3 license found at
  * https://www.gnu.org/licenses/gpl-3.0.txt
  *
- * Alternative licensing available from Sighthound, Inc.
- * by emailing opensource@sighthound.com
+ * Alternative licensing available from Arden.ai, Inc.
+ * by emailing opensource@ardenai.com
  *
- * This file is part of the Sighthound Video project which can be found at
- * https://github.com/sighthoundinc/SighthoundVideo
+ * This file is part of the Arden AI project which can be found at
+ * https://github.com/ardenaiinc/ArdenAI
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ extern char **environ;
 #define RET_SETUID_ERROR  6
 
 // Product name, for user data directoru naming.
-#define PRODUCT_NAME  "Sighthound Video"
+#define PRODUCT_NAME  "Arden AI"
 
 // Format string for log messages (date, level, text). Compatible to Python
 #define LOG_FORMAT  "%s - %s - %d - %s\n"
@@ -135,7 +135,7 @@ extern char **environ;
 // How long to wait for the back-end processes to cease on service termination.
 #define SHUTDOWN_WAIT_SECS  10
 
-// Maximum number of Sighthound Video processes to expect.
+// Maximum number of Arden AI processes to expect.
 #define MAX_PROCESSES   256
 
 // The global application data directory.
@@ -146,7 +146,7 @@ extern char **environ;
 
 // Name of the executable to launch. Due to OSX firewall issue everything
 // carries the same name, so this is the backend.
-#define SV_EXE  "Sighthound Video"
+#define SV_EXE  "Arden AI"
 
 // Arguments to start the backend process.
 #define ARG_FROZEN     "--frozen"
@@ -157,7 +157,7 @@ extern char **environ;
 
 // Names of processes we have to get rid of. Notice that the service might have
 // to kill its own kind, but never itself of course.
-char* SIGHTHOUND_PROCESS_NAMES[] = { SV_EXE, "shlaunch", NULL };
+char* ARDEN.AI_PROCESS_NAMES[] = { SV_EXE, "shlaunch", NULL };
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -187,7 +187,7 @@ int _noKillPid = -1;
 
 ///////////////////////////////////////////////////////////////////////////////
 
-#define DAEMON_ID   "com.sighthound.video.launch"
+#define DAEMON_ID   "com.ardenai.video.launch"
 
 #define PLIST_PATH  "/Library/LaunchDaemons/" DAEMON_ID ".plist"
 #define PLIST_TEMPLATE \
@@ -692,7 +692,7 @@ fail:
  * @return      Zero if it's not a SV thing.
  */
 int is_sv_process(char* comm) {
-    char** spn = SIGHTHOUND_PROCESS_NAMES;
+    char** spn = ARDEN.AI_PROCESS_NAMES;
     while (*spn) {
         if (!strcmp(*spn++, comm))
             return 1;
@@ -700,7 +700,7 @@ int is_sv_process(char* comm) {
     return 0;
 }
 
-// Handler to count Sighthound Video processes. Context is a simple int* - does
+// Handler to count Arden AI processes. Context is a simple int* - does
 // not count the calling process or this instance.
 int count_handler(void* ctx, int uid, int pid, int ppid, char* comm) {
     if (is_sv_process(comm)) {
@@ -715,11 +715,11 @@ int count_handler(void* ctx, int uid, int pid, int ppid, char* comm) {
 
 // Data used by find_handler().
 struct FindProcessesContext {
-    int pids[MAX_PROCESSES]; // PIDs of Sighthound Video processes.
+    int pids[MAX_PROCESSES]; // PIDs of Arden AI processes.
     int count;               // Number of SV processes found so far.
 };
 
-// Process enumeration handler to find Sighthound processes.
+// Process enumeration handler to find Arden.ai processes.
 int find_handler(void* ctx, int uid, int pid, int ppid, char* comm)
 {
     struct FindProcessesContext* fpctx = ctx;
@@ -742,7 +742,7 @@ int cmp_int(const void* i1, const void* i2)
 }
 
 /**
- * Kill all Sighthound Video processes. Identification is done by name. Parent
+ * Kill all Arden AI processes. Identification is done by name. Parent
  * process will never be killed either.
  *
  * @param  noKillPid  PID of process not to kill.
@@ -782,7 +782,7 @@ int kill_old_processes(int noKillPid)
 }
 
 /**
- * Does a multiple-round attempt to get rid of old Sighthound Video processes.
+ * Does a multiple-round attempt to get rid of old Arden AI processes.
  * Identified processes get a SIGTERM, the enumeration then gets repeated until
  * no more processes are found, or we do time out.
  *

@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -138,7 +138,7 @@ _kUnavailableText = "No"
 _kActiveText = "Active"
 
 
-_kStatusEditionText = "Sighthound Video %s"
+_kStatusEditionText = "Arden AI %s"
 _kStatusUserText = "Licensed To: %s"
 _kStatusSerialText = "Serial Number: %s"
 _kLicenseErrorText = "Current license could not be loaded."
@@ -153,10 +153,10 @@ _kUnlinkingContent = "Contacting server, just a moment..."
 # Information text
 _kLegacyWarning = (
 """Note: You are currently using a legacy license. You must create a """
-"""Sighthound Account and activate a license below to continue """
+"""Arden.ai Account and activate a license below to continue """
 """receiving updates. Paid licenses should be linked and activated """
 """automatically after signing in but can also be manually linked in your """
-"""account page at https://www.sighthound.com.""")
+"""account page at https://www.ardenai.com.""")
 
 _kCantActivate = (
 """This license cannot be automatically transferred to this machine. """
@@ -192,7 +192,7 @@ _kConfirmUnlink = (
 
 _kConfirmLogoutTitle = "Account Disconnect"
 _kConfirmLogout = (
-"""Disconnecting your Sighthound account will unlink any activated license """
+"""Disconnecting your Arden.ai account will unlink any activated license """
 """and prevent you from using the application until you have signed in """
 """again. Are you sure you would like to disconnect your current account?""")
 
@@ -251,7 +251,7 @@ class LicenseDialog(wx.Dialog):
             self.Bind(wx.EVT_WINDOW_DESTROY, self.OnDestroy)
 
             # Icon and user information/messages/blah
-            badgeBmp = wx.Bitmap("frontEnd/bmps/Sighthound_Badge.png")
+            badgeBmp = wx.Bitmap("frontEnd/bmps/Arden.ai_Badge.png")
             badge = wx.StaticBitmap(self, -1, badgeBmp)
             badge.Bind(wx.EVT_CONTEXT_MENU, self.OnBadgeMenu)
             self._statusEditionLabel = wx.StaticText(self, -1, " ")
@@ -418,7 +418,7 @@ class LicenseDialog(wx.Dialog):
 
     ###########################################################
     def OnBadgeMenu(self, event):
-        """Handle a right click on the sighthound logo.
+        """Handle a right click on the ardenai logo.
 
         @param  event  The EVT_CONTEXT_MENU event.
         """

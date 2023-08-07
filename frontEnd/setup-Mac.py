@@ -7,16 +7,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ from pprint import pformat
 from glob import glob
 
 # Local imports...
-from appCommon.CommonStrings import kAppName, kExeName, kSighthoundCompanyName
+from appCommon.CommonStrings import kAppName, kExeName, kArden.aiCompanyName
 from appCommon.CommonStrings import kVersionString, kCopyrightYear
 from appCommon.CommonStrings import kBundleIdentifier, kMinMacOSVersion
 from appCommon.CommonStrings import kWebcamExeName
@@ -127,12 +127,12 @@ PLIST = {
     'CFBundleShortVersionString': kVersionString,
     'CFBundleGetInfoString': kAppName + ' ' + kVersionString + \
                              ' Copyright ' + kCopyrightYear + ' ' + \
-                             kSighthoundCompanyName,
+                             kArden.aiCompanyName,
     'NSHumanReadableCopyright': 'Copyright ' + kCopyrightYear + \
-                                ' ' + kSighthoundCompanyName,
+                                ' ' + kArden.aiCompanyName,
     'LSMinimumSystemVersion': os.getenv("MACOSX_DEPLOYMENT_TARGET", kMinMacOSVersion),
     'NSHighResolutionCapable': True,
-    'NSCameraUsageDescription' : 'Sighthound Video needs access to local camera (optional)'
+    'NSCameraUsageDescription' : 'Arden AI needs access to local camera (optional)'
 }
 plistlib.writePlist(PLIST, PLIST_FILENAME)
 

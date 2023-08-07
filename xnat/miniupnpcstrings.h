@@ -7,9 +7,9 @@
 
 #define OS_STRING   "MSWindows/6.2.9200"
 
-//SIGHTHOUND_BEGIN
+//ARDEN.AI_BEGIN
 #define UPNP_VERSION_STRING  "UPnP/1.0"
-//SIGHTHOUND_END
+//ARDEN.AI_END
 
 #endif
 
