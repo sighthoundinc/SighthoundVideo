@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -131,13 +131,13 @@ _kLicenseLoadTimeout=30
 
 # Offer to move data...
 _kMoveDataOffer = (
-'''Would you like to import your existing data into Sighthound Video?'''
+'''Would you like to import your existing data into Arden AI?'''
 '''\n\n'''
-'''This data will no longer be accessible by Sighthound Video. Please '''
-'''first ensure that no Sighthound Video processes are running before '''
+'''This data will no longer be accessible by Arden AI. Please '''
+'''first ensure that no Arden AI processes are running before '''
 '''continuing, and make a backup of your existing data.'''
 )
-_kMoveDataOfferTitle = "Sighthound Video installation detected"
+_kMoveDataOfferTitle = "Arden AI installation detected"
 
 _kMoveFailedText = (
 '''Couldn't move existing data.'''
@@ -151,7 +151,7 @@ _kMoveFailedTitle = "Couldn't move"
 _kVideoMoveFailedText = (
 '''Couldn't move existing video files.'''
 '''\n\n'''
-'''Sighthound Video could not migrate the existing video files. Hit OK '''
+'''Arden AI could not migrate the existing video files. Hit OK '''
 '''to continue launching the application and begin from scratch, or Cancel '''
 '''to exit and attempt to manually back up existing video files. They may '''
 '''be located at "%s" or "%s".\n\n'''
@@ -163,7 +163,7 @@ _kStartError = \
 "The application could not be started.\nPlease wait a minute and try again."
 
 _kServiceMissingWin32 = \
-"""The service is not running.\nPlease check the Sighthound Video Launch """
+"""The service is not running.\nPlease check the Arden AI Launch """
 """entry in the 'Services' section of """
 """the Control Panel, or reinstall the application."""
 
@@ -296,7 +296,7 @@ class FrontEndApp(wx.App):
             #
             try:
                 retinaPatch = os.path.join(os.path.expanduser("~"), "Library",
-                    "Preferences", "com.sighthound.sighthoundvideo.plist")
+                    "Preferences", "com.ardenai.ardenaivideo.plist")
                 if os.path.exists(retinaPatch):
                     os.remove(retinaPatch)
             except:
@@ -320,7 +320,7 @@ class FrontEndApp(wx.App):
             isRightVersionRunning = self._handleOldBackends()
 
             # Offer to move the user's data directory if they are upgrading
-            # from VDV to Sighthound Video. Must happen after setting app name
+            # from VDV to Arden AI. Must happen after setting app name
             # but before we do anything with the data directory...
             if not self._offerMoveDataDir():
                 return False
@@ -659,8 +659,8 @@ class FrontEndApp(wx.App):
 
         dataDir = getUserLocalDataDir()
 
-        # Look for old data in "Sighthound Video" and offer to move it...
-        oldAppDir = os.path.join(os.path.split(dataDir)[0], "Sighthound Video" + os.sep)
+        # Look for old data in "Arden AI" and offer to move it...
+        oldAppDir = os.path.join(os.path.split(dataDir)[0], "Arden AI" + os.sep)
         if os.path.isdir(oldAppDir):
             choice = wx.MessageBox(_kMoveDataOffer, _kMoveDataOfferTitle,
                                    wx.YES_NO | wx.YES_DEFAULT, None)
@@ -817,7 +817,7 @@ class FrontEndApp(wx.App):
             tmpDir = tempfile.gettempdir()
             launchLogs = os.listdir(tmpDir)
             launchLogs = [os.path.join(tmpDir, log) for log in launchLogs
-                    if log.startswith('sighthound')]
+                    if log.startswith('ardenai')]
 
             # OSX can check for hard crashes.
             if wx.Platform == "__WXMAC__":
@@ -825,7 +825,7 @@ class FrontEndApp(wx.App):
                 osDir = os.path.expanduser("~/Library/Logs/DiagnosticReports")
                 crashes = os.listdir(osDir)
                 crashes = [os.path.join(osDir, crash) for crash in crashes if
-                    crash.startswith('Sighthound')]
+                    crash.startswith('Arden.ai')]
 
                 if len(crashes):
                     prompt = _kCrashError
@@ -974,13 +974,13 @@ def validateOSVersion(logger):
         errStr = "Unsupported macOS version. macOS 10.10 or greater is required"
     elif major == 10 and minor == 12 and patch < 4:
         errStr = """Unsupported macOS version %s. This macOS version has a known problem, """\
-                 """which prevents Sighthound Video from functioning correctly. """\
+                 """which prevents Arden AI from functioning correctly. """\
                  """Please upgrade macOS to 10.12.4 or later version.""" % release
 
     if errStr is not None:
         dlg = wx.MessageDialog(None,
                         errStr,
-                        "Cannot start Sighthound Video",
+                        "Cannot start Arden AI",
                         wx.OK | wx.ICON_ERROR)
         dlg.ShowModal()
         return False

@@ -3,8 +3,8 @@
 # Set up variables
 #=================================================================================
 SCRIPT_PATH="`dirname \"$0\"`" 
-BUNDLE_ID=com.sighthoundlabs.sighthoundvideo
-APPLE_ID=ci@sighthound.com
+BUNDLE_ID=com.ardenailabs.ardenaivideo
+APPLE_ID=ci@ardenai.com
 APP_PATH="${1}"
 
 if [ ! -z "${SV_SKIP_NOTARIZATION}" ]; then
@@ -17,7 +17,7 @@ fi
 ditto -c -k --keepParent "${APP_PATH}" "${APP_PATH}.zip" || exit 1
 echo "Sending notarization request to Apple..."
 APPLE_SAYS=`xcrun altool --notarize-app -t osx --primary-bundle-id "${BUNDLE_ID}" --username "${APPLE_ID}" --password "@keychain:CI_PASSWORD" --file "${APP_PATH}.zip"`
-#APPLE_SAYS="No errors uploading '/Users/alex/work/sv/smartvideo/build/app-out/FrontEnd-Mac/Sighthound Video.app.zip'. RequestUUID = 78943e2b-ca7a-498c-94b4-bd11843991f8"
+#APPLE_SAYS="No errors uploading '/Users/alex/work/sv/smartvideo/build/app-out/FrontEnd-Mac/Arden AI.app.zip'. RequestUUID = 78943e2b-ca7a-498c-94b4-bd11843991f8"
 echo "APPLE_SAYS=${APPLE_SAYS}"
 APPLE_REQ_ID=`echo $APPLE_SAYS | grep RequestUUID | sed 's/.*RequestUUID = \(.*\)/\1/g'`
 echo "APPLE_REQ_ID=${APPLE_REQ_ID}"

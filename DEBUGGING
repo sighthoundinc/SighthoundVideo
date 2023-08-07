@@ -1,5 +1,5 @@
 ==============================================================================
-Troubleshooting Sighthound Video 
+Troubleshooting Arden AI 
 ==============================================================================
 
 
@@ -11,9 +11,9 @@ Notice: This is supposed to be an internal troubleshooting tool. It is expected
 that support personnel will generate a config file with the debug settings enabled,
 and provide the file to the customers with the instructions.
 
-The debug configuration resides in the file debugPrefs in the Sighthound Video
-data directory (so ~/Library/Application Support/Sighthound Video or
-C:\Users\[User]\AppData\Local\Sighthound Video).
+The debug configuration resides in the file debugPrefs in the Arden AI
+data directory (so ~/Library/Application Support/Arden AI or
+C:\Users\[User]\AppData\Local\Arden AI).
 
 The file is read at application start, so to be sure the settings are applied,
 it is advised to place the file in the above folders and reboot.

@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1020,7 +1020,7 @@ class FrontEndFrame(wx.Frame):
         #
         # We call Close with a CallAfter, which hopefully helps make the app
         # quit more cleanly on Mac on 10.5 if you do the following applescript:
-        #   tell application "Sighthound Video" to quit
+        #   tell application "Arden AI" to quit
         #
         # Note: this function is not intended for other code to call--it is
         # only called in response to the menu item (or similar cases)...
@@ -1102,7 +1102,7 @@ class FrontEndFrame(wx.Frame):
             DoAutoUpdateCheck(self, False, self.forceBackendExit,
                               self._backEndClient)
         else:
-            wx.MessageBox('You must sign in with a Sighthound Account '
+            wx.MessageBox('You must sign in with a Arden.ai Account '
                 'to continue receiving application updates.',
                 'Updates unavailable', wx.OK | wx.ICON_ERROR,
                 self.GetTopLevelParent())

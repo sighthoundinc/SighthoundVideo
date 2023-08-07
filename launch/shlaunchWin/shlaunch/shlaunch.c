@@ -8,16 +8,16 @@
 #*****************************************************************************
 #
  *
- * Copyright 2013-2022 Sighthound, Inc.
+ * Copyright 2013-2022 Arden.ai, Inc.
  *
  * Licensed under the GNU GPLv3 license found at
  * https://www.gnu.org/licenses/gpl-3.0.txt
  *
- * Alternative licensing available from Sighthound, Inc.
- * by emailing opensource@sighthound.com
+ * Alternative licensing available from Arden.ai, Inc.
+ * by emailing opensource@ardenai.com
  *
- * This file is part of the Sighthound Video project which can be found at
- * https://github.com/sighthoundinc/SighthoundVideo
+ * This file is part of the Arden AI project which can be found at
+ * https://github.com/ardenaiinc/ArdenAI
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,17 +86,17 @@
 // The name of the service executable.
 #define SERVICE_EXE L"shlaunch.exe"
 // The title shown in the Windows services dialog.
-#define SERVICE_TITLE L"Sighthound Video Launch"
+#define SERVICE_TITLE L"Arden AI Launch"
 // Some extra description shown in the Windows services dialog.
-#define SERVICE_INFO L"Launches the Sighthound Video backend automatically."
+#define SERVICE_INFO L"Launches the Arden AI backend automatically."
 
 // Name of the backend executable, which has to reside in the same directory
 // as the service executable.
-#define BACKEND_EXE L"Sighthound Agent.exe"
+#define BACKEND_EXE L"Arden.ai Agent.exe"
 // Parameter passed to the backend process call. Followed by the global data
 // directory.
 #define BACKEND_ARG1 L"--backEnd"
-// Marker we use to identify all of the Sighthound Video processes. Actually
+// Marker we use to identify all of the Arden AI processes. Actually
 // only needed under OSX right now, but we'd like to stay compatible.
 #define BACKEND_ARG2 L"--sh-2e4fce7e"
 // Reserved marker to work around a forking issue. And we use it for the
@@ -109,7 +109,7 @@
 #define ARG_NO_AUTOSTART (ARG_PREFIX L"no-autostart")
 
 // Name of the data directory.
-#define DATADIR_NAME L"Sighthound Video"
+#define DATADIR_NAME L"Arden AI"
 
 // Name of the file pointing to a(n original local user's) data directory.
 #define DATADIR_POINTER L"data_dir_ptr"
@@ -159,11 +159,11 @@
 TCHAR* KILL_CANDIDATES_ALL[] = {
     SERVICE_EXE,                // these two entries must be fixed, see the
     BACKEND_EXE,                // second "list" KILL_CANDIDATES ...
-    L"Sighthound Video.exe",
-    L"Sighthound USB.exe",
-    L"Sighthound Web.exe",
-    L"Sighthound XNAT.exe",
-    L"SighthoundXNAT.exe",
+    L"Arden AI.exe",
+    L"Arden.ai USB.exe",
+    L"Arden.ai Web.exe",
+    L"Arden.ai XNAT.exe",
+    L"Arden.aiXNAT.exe",
     NULL };
 
 // List of all of the backend (executable) names.
@@ -735,7 +735,7 @@ BOOL current_user_data_dir(TCHAR* dataDir, size_t dataDirSize)
 
 /**
  * Some simple heuritics to check whether a given path might be a legit and
- * former Sighthound Video data directory.
+ * former Arden AI data directory.
  *
  * @param path  The path to check out.
  * @return      TRUE of the path seems to be what we think it is.
@@ -1284,7 +1284,7 @@ VOID WINAPI ctrl_handler(DWORD ctrl)
 
 
 /**
- * Launches the Sighthound backend executable.
+ * Launches the Arden.ai backend executable.
  *
  * @param ctx  Service context.
  * @return     ERROR_SUCCESS if the launch succeeded, otherwise an error.

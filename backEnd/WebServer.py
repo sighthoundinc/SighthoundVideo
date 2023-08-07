@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -76,7 +76,7 @@ Controller for the nginx web server. Creates new instances, ensures that they
 are working and runs a port opener in parallel to support NAT traversal. For
 every new process/run of a server its world or work directory respectively gets
 recreated. Only the (access/error) log files get written in the regular
-Sighthound logs folder. Everything else gets removed if an instance is shut
+Arden.ai logs folder. Everything else gets removed if an instance is shut
 down.
 
 FIXME (01/24/2014):
@@ -92,7 +92,7 @@ https://vitamind.kilnhg.com/Code/Vitamin-D-Video/scratch/nginxBuild.git.
 
 After a build attempt all of the Windows specific code can be found in
 
-msvc\nginx_win32_sighthound_build\buildenv\build\nginx\src\os\win32
+msvc\nginx_win32_ardenai_build\buildenv\build\nginx\src\os\win32
 
 The Windows support is (or at least appears) messy at some points. For example
 files are always opened as Unicode (ngx_open_file), with the cstr expected to
@@ -119,15 +119,15 @@ nginx documents about this fact, but only this way file paths referenced in the
 configuration can actually be accessed (if they contain non-ASCII).
 
 3. At this moment we still cannot support people with either having their user
-name containing non-ASCII, and/or their Windows having the Sighthound work
+name containing non-ASCII, and/or their Windows having the Arden.ai work
 directory contain non-ASCII. Later case comes from the fact that e.g. the folder
 "Documents And Settings" is unfortunately translated, and thus can contain
 non-ASCII. We have implemented a proof of concept for a workaround though:
-by setting the environment variable SIGHTHOUND_WEBDIR the 'web' folder, usually
-located in the Sighthound user directory, can be placed in a spot so no
+by setting the environment variable ARDEN.AI_WEBDIR the 'web' folder, usually
+located in the Arden.ai user directory, can be placed in a spot so no
 non-ASCII characters will be in the path at all. This seems to work well, thus
-the final approach could be that Sighthound Video creates the web folder
-automatically e.g. in C:\sighthoundvideo_web and then removes it at shutdown.
+the final approach could be that Arden AI creates the web folder
+automatically e.g. in C:\ardenaivideo_web and then removes it at shutdown.
 We haven't decided yet if we want that patchwork or not. Having a more Windows
 empathetical/working nginx would be the actual way to go of course.
 
@@ -146,7 +146,7 @@ is a must, at least under Windows.
 ###############################################################################
 
 # realm, used in the basic auth mechanism
-REALM = "Sighthound"
+REALM = "Arden.ai"
 
 ###############################################################################
 
@@ -160,12 +160,12 @@ _kBackendPingSecs = 60   # how often to ping the back-end
 _kPortCheckSecs   = 3600 # how often the port opener will do the external check
 _kPortCheckTimeout= 10   # timeout for external port checks (in seconds)
 _kHtAuthFile      = "htauth"    # the auth file name, containing the credentials
-_kConfigName      = "sighthoundweb.conf"    # name of the nginx config file
+_kConfigName      = "ardenaiweb.conf"    # name of the nginx config file
 _kPingFile        = "ping.txt"  # name of ping file, to detect older instances
 _kWebServerLog    = "WebServer.log" # name of the log file for this module
 _kErrorLog        = "WebServerError.log"    # name of the nginx error log file
 _kAccessLog       = "WebServerAccess.log"   # name of the nginx access log file
-_kServerName      = "SighthoundWebServer"   # official name for our nginx server
+_kServerName      = "Arden.aiWebServer"   # official name for our nginx server
 _kRemoteAppName   = os.path.join("share", "svremoteviewer") # directory where we expect the remote app code
 
 # Template to render the basic auth portion of the nginx config file.
@@ -192,7 +192,7 @@ _kAuthDigestOff = """
     auth_digest off;"""
 
 # The URL where the port checker script can be reached.
-_kPortOpenerCheckURL = "https://portcheck.sighthound.com/portcheck.php"
+_kPortOpenerCheckURL = "https://portcheck.ardenai.com/portcheck.php"
 
 # Timeout addition for the port check script. The timeout value communicated to
 # it is used on the server for the HTTP fetch attempt. Naturally there is some
@@ -223,7 +223,7 @@ _kCertExpirationDays = 3650
 
 # 'Domain' for the SSL certificates CN field. Appended to the user portion of
 # the e-mail address, to represent a somewhat recognizable construct.
-_kCommonNameDomain = ".sighthoundvideo"
+_kCommonNameDomain = ".ardenaivideo"
 
 # Name of the environment variable pointing to the OpenSSL configuration file.
 _kOpenSSLConfEnvVar = "OPENSSL_CONF"

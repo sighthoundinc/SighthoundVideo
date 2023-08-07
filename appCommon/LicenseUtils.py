@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 # ----------------------------------------------------------------------
-#  Copyright (C) 2014 Sighthound, Inc. All rights reserved.
+#  Copyright (C) 2014 Arden.ai, Inc. All rights reserved.
 #
 #  The information and source code contained herein is the
-#  exclusive property of Sighthound, Inc. No part of this software
+#  exclusive property of Arden.ai, Inc. No part of this software
 #  may be used, reproduced, stored or distributed in any form,
-#  without explicit written authorization from Sighthound, Inc.
+#  without explicit written authorization from Arden.ai, Inc.
 # ----------------------------------------------------------------------
 
 # Local imports...
@@ -42,7 +42,7 @@ kOfflineInfo = "Offline"
 kAvailableInfo = "Available"
 
 kNoValueToken = "###"
-kDefaultUser = "A Happy Sighthound Video User"
+kDefaultUser = "A Happy Arden AI User"
 kDefaultSerial = "None"
 
 kLegacyLicenseKeys = [kCamerasField, kEditionField, kEmailField, kExpiresField,

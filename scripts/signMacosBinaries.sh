@@ -6,10 +6,10 @@ fi
 # Set up variables
 #=================================================================================
 SCRIPT_PATH="`dirname \"$0\"`"
-BUNDLE_ID=com.sighthoundlabs.sighthoundvideo
+BUNDLE_ID=com.ardenailabs.ardenaivideo
 APP_PATH="${1}"
 ENTITLEMENTS_PATH=${SCRIPT_PATH}/../FrontEnd/resources/entitlements.plist
-CERT_NAME="Developer ID Application: Sighthound, Inc. (ZHUS2RP6P5)"
+CERT_NAME="Developer ID Application: Arden.ai, Inc. (ZHUS2RP6P5)"
 # -i ${BUNDLE_ID} causes webcam crash -- but can we notarize, if we sign without it?
 CODESIGN_OPTIONS_REDUX="-f --timestamp --verbose=4 --options=runtime --entitlements ${ENTITLEMENTS_PATH}"
 CODESIGN_OPTIONS="${CODESIGN_OPTIONS_REDUX}" # -i ${BUNDLE_ID}"
@@ -33,15 +33,15 @@ else
 	${SCRIPT_PATH}/fixRPath.sh "@loader_path" "@executable_path" "${BIN_PATH}"/*.so || { exit 1; }
 	${SCRIPT_PATH}/fixRPath.sh "@loader_path/PipelineNodes" "@executable_path" "${BIN_PATH}"/PipelineNodes/*.so || { exit 1; }
 
-	echo "Signing Sighthound Video Binaries"
+	echo "Signing Arden AI Binaries"
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}"/*.dylib || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}"/PipelineNodes/*.so || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}"/*.so || { exit 1; }
-	codesign ${CODESIGN_OPTIONS_REDUX} -s "${CERT_NAME}" "${BIN_PATH}/Sighthound USB" || { exit 1; }
+	codesign ${CODESIGN_OPTIONS_REDUX} -s "${CERT_NAME}" "${BIN_PATH}/Arden.ai USB" || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/Python" || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/shlaunch" || { exit 1; }
-	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/Sighthound Web" || { exit 1; }
-	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/SighthoundVideoLauncher" || { exit 1; }
+	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/Arden.ai Web" || { exit 1; }
+	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/ArdenAILauncher" || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${BIN_PATH}/library.zip" || { exit 1; }
 	codesign ${CODESIGN_OPTIONS} -s "${CERT_NAME}" "${APP_PATH}" || { exit 1; }
 

@@ -7,16 +7,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -42,11 +42,11 @@
 # but otherwise be separate projects.
 
 
-FRONTEND_APPNAME           ?= Sighthound Video
+FRONTEND_APPNAME           ?= Arden AI
 
-FRONTEND_EXENAME           ?= Sighthound Video
-BACKEND_EXENAME            ?= Sighthound Agent
-WEBCAM_SERVER_EXENAME      ?= Sighthound USB
+FRONTEND_EXENAME           ?= Arden AI
+BACKEND_EXENAME            ?= Arden.ai Agent
+WEBCAM_SERVER_EXENAME      ?= Arden.ai USB
 
 CWD_UNIX                   := $(shell pwd)
 CWD                        := $(shell python -c 'import os; print os.path.abspath(".")' | sed 's/$$//g')

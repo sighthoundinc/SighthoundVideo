@@ -7,7 +7,7 @@ project(xnat)
 
 
 if (WIN32)
-    set(TARGET_NAME "SighthoundXNAT")
+    set(TARGET_NAME "Arden.aiXNAT")
     add_executable(${TARGET_NAME} xnat.c minidump.c)
     set(WINLIB iphlpapi.lib ws2_32.lib)
 else()

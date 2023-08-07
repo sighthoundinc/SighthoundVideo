@@ -1,5 +1,5 @@
 # General
-* Sighthound Video is an open-source, flexible, intelligent VMS.
+* Arden AI is an open-source, flexible, intelligent VMS.
 * The following are the present and future objectives of the project:
    * To run on as many platforms as possible.  At present, x64 Windows and macOS are supported.
    * To leverage intelligent computer vision to improve information signal-to-noise ratio, and to make things or events easy to find, in real-time or after the fact.
@@ -9,8 +9,8 @@
    * To support and provide integration for standards whenever possible, actual or defacto, such as ONVIF, RTSP, WebRTC, HLS, and HomeKit Secure Video (HKSV)
 
 # Source Package
-* Sighthound Video package consists of the following components
-  * source.zip - Sighthound Video source code distribution
+* Arden AI package consists of the following components
+  * source.zip - Arden AI source code distribution
   * libs.zip - packaged binary dependencies
   * tools.zip - python 2.7.18 package with relevant packages installed
     * TBD: describe how the package is created

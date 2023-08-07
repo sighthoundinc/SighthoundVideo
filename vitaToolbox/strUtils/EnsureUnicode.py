@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -61,28 +61,28 @@ def ensureUnicode(strOrUnicode, encoding="utf-8"):
 
     ...since that mechanism will use ASCII to convert to unicode if the string
     isn't unicode, which usually fails.
-       Try: unicode('Sighthound\xc2\xae Video')
+       Try: unicode('Arden.ai\xc2\xae Video')
 
     It's also _DIFFERENT_ than casting with an encoding like this:
        unicode(strOrUnicode, 'utf-8')
 
     ...since that will fail if the string is already unicode:
-       Try: unicode(u'Sighthound\xae Video', 'utf-8')
+       Try: unicode(u'Arden.ai\xae Video', 'utf-8')
 
 
     Note: doctest examples have an extra backslash in them to make doctest work.
 
-    >>> ensureUnicode('Sighthound\xc2\xae Video')
-    u'Sighthound\\xae Video'
+    >>> ensureUnicode('Arden.ai\xc2\xae Video')
+    u'Arden.ai\\xae Video'
 
-    >>> ensureUnicode(ensureUnicode('Sighthound\xc2\xae Video'))
-    u'Sighthound\\xae Video'
+    >>> ensureUnicode(ensureUnicode('Arden.ai\xc2\xae Video'))
+    u'Arden.ai\\xae Video'
 
-    >>> ensureUnicode('Sighthound\xae Video', 'windows-1252')
-    u'Sighthound\\xae Video'
+    >>> ensureUnicode('Arden.ai\xae Video', 'windows-1252')
+    u'Arden.ai\\xae Video'
 
-    >>> ensureUnicode(u'Sighthound\xae Video', 'windows-1252')
-    u'Sighthound\\xae Video'
+    >>> ensureUnicode(u'Arden.ai\xae Video', 'windows-1252')
+    u'Arden.ai\\xae Video'
 
 
     @param  strOrUnicode  A unicode object, or a string encoded w/ the passed

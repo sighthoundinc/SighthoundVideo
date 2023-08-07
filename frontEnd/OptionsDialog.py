@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -179,7 +179,7 @@ _kVideoResolutionLabels = [ "Original", "1080p", "720p", "480p", "240p" ]
 # Interval for web server status polling, in milliseconds.
 kWebServerStatusRefresh = 1000
 
-_kLaunchOnStartupLabel = "Run Sighthound Video at system startup"
+_kLaunchOnStartupLabel = "Run Arden AI at system startup"
 _kIsWin = wx.Platform == '__WXMSW__'
 
 # To generate the remote access URLs

@@ -9,16 +9,16 @@
 #*****************************************************************************
 #
 #
-# Copyright 2013-2022 Sighthound, Inc.
+# Copyright 2013-2022 Arden.ai, Inc.
 #
 # Licensed under the GNU GPLv3 license found at
 # https://www.gnu.org/licenses/gpl-3.0.txt
 #
-# Alternative licensing available from Sighthound, Inc.
-# by emailing opensource@sighthound.com
+# Alternative licensing available from Arden.ai, Inc.
+# by emailing opensource@ardenai.com
 #
-# This file is part of the Sighthound Video project which can be found at
-# https://github.com/sighthoundinc/SighthoundVideo
+# This file is part of the Arden AI project which can be found at
+# https://github.com/ardenaiinc/ArdenAI
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -923,10 +923,10 @@ class BackEndClient(object):
         return self._proxy.getMessage()
 
     ###########################################################
-    def submitClipToSighthound(self, camLocation, note, startTime, duration):
-        """Submit clip to Sighthound for analysing."""
+    def submitClipToArden.ai(self, camLocation, note, startTime, duration):
+        """Submit clip to Arden.ai for analysing."""
         endTime = startTime + duration
-        return self._proxy.remoteSubmitClipToSighthound(camLocation,
+        return self._proxy.remoteSubmitClipToArden.ai(camLocation,
                                     note,
                                     (startTime/1000, startTime%1000),
                                     (endTime/1000, endTime%1000))
